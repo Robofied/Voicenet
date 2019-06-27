@@ -3,9 +3,9 @@ Python library for voice based gender detection.
 # Getting Started
 
 ### Installation
-
+'''
 pip install voicenetg
-
+'''
 # Build Status
 # Code Style
 # Screenshots
