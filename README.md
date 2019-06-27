@@ -1,5 +1,5 @@
 # VoicenetG
-# Motivation
+# Getting Started
 # Build Status
 # Code Style
 # Screenshots
