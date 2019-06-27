@@ -1,4 +1,5 @@
 # VoicenetG
+Python library for voice based gender detection. 
 # Getting Started
 
 ### Installation
