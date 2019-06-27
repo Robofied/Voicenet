@@ -1,5 +1,10 @@
 # VoicenetG
 # Getting Started
+
+### Installation
+
+pip install voicenetg
+
 # Build Status
 # Code Style
 # Screenshots
