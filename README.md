@@ -24,9 +24,9 @@ If you are simply looking to start working with the voicenetG codebase, navigate
 
 You can also triage issues which may include reproducing bug reports, or asking for vital information such as version numbers or reproduction instructions.
 
-Or maybe through using voicenetG you have an idea of your own or are looking for something in the documentation and thinking ‘this can be improved’...you can do something about it!
+Or maybe through using voicenetG you have an idea of your own or are looking for something in the documentation and thinking ‘this can be improved’. You can do something about it!
 
-Feel free to ask questions on the mailing list or on (discuss@robofied.com).
+Feel free to ask questions on the mailing list or on [Slack](robofied.slack.com).
 
 # Credits
 # License
