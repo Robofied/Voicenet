@@ -18,3 +18,4 @@ pip install voicenetg
 # Contribute
 # Credits
 # License
+[BSD-3](https://github.com/Robofied/VoicenetG/blob/master/LICENSE)
