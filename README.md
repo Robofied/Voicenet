@@ -26,7 +26,7 @@ You can also triage issues which may include reproducing bug reports, or asking 
 
 Or maybe through using voicenetG you have an idea of your own or are looking for something in the documentation and thinking ‘this can be improved’. You can do something about it!
 
-Feel free to ask questions on the mailing list or on [Slack](robofied.slack.com).
+Feel free to ask questions on the mailing list or on [Slack](https://robofied.slack.com).
 
 # Credits
 # License
