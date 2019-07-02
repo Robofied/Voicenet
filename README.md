@@ -7,6 +7,7 @@ Python library for voice based gender detection.
 * Geneder detection based on the voice.
 * Emotion detection from voice.
 * Speaker differentiationn based on voice.
+* Neural voice transfer (NVT)
 
 ### Installation
 
