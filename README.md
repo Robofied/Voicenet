@@ -2,15 +2,14 @@
 Python library for voice based gender detection. 
 
 # Getting Started
+Voicenet is a comprehensive library for performing speech/voice based function. It is capable of doing:
 
 * Speechtotext (STT)
 * Geneder detection based on the voice.
 * Emotion detection from voice.
-* Speaker differentiationn based on voice.
 * Neural voice transfer (NVT)
 
 ### Installation
-
 pip install voicenet
 
 # Build Status
