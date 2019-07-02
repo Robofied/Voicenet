@@ -6,6 +6,7 @@ Python library for voice based gender detection.
 * Speechtotext (STT)
 * Geneder detection based on the voice.
 * Emotion detection from voice.
+* Speaker differentiationn based on voice.
 
 ### Installation
 
