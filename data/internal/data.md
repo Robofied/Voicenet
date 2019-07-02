@@ -1,1 +1,1 @@
-## Description of files of this dir
+## Description of files of this directory
