@@ -6,7 +6,10 @@ Geneder detection based on the voice.
 
 Initially, VAD(voice activity detection) needs to be performed to extract speech utterances before feature extraction.
 
-After VAD, features that can be extracted include “meanfreq","standard deviation", "median", "Q25","Q75","IQR","skew","kurt","sp.ent","sfm","mode","centroid","meanfun","minfun","maxfun","meandom","mindom","maxdom","dfrange","modindx" from the voice using feature extraction techniques. 
+After VAD, features that can be extracted include 
+* “meanfreq"
+* "standard deviation"
+"median", "Q25","Q75","IQR","skew","kurt","sp.ent","sfm","mode","centroid","meanfun","minfun","maxfun","meandom","mindom","maxdom","dfrange","modindx" from the voice using feature extraction techniques. 
 
 After extracting the features,we can directly classify voice based on the user input.
 
