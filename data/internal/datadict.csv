@@ -1,17 +1,17 @@
 coloumn ,data-type,description
-meanfreq,real,meanfreq: mean frequency (in kHz)
-sd,real,sd: standard deviation of frequency
-median,real,median: median frequency (in kHz)
-Q25,real,Q25: first quantile (in kHz)
-Q75,real,Q75: third quantile (in kHz)
-IQR,real,IQR: interquantile range (in kHz)
-skew,real,skew: skewness (see note in specprop description)
-kurt,real,kurt: kurtosis (see note in specprop description)
-sp.ent,real,sp.ent: spectral entropy
-sfm,real,sfm: spectral flatness
-mode,real,mode: mode frequency
-centroid,real,centroid: frequency centroid (see specprop)
-peakf,real,peakf: peak frequency (frequency with highest energy)
+meanfreq,real,meanfreq: mean frequency (in kHz). How frequent the waves are in audio  
+sd,real,sd: standard deviation of frequency. What is the frequency in 1 s.d as frequency will vary throughout the audio.
+median,real,median: median frequency (in kHz). Mean of the frequency
+Q25,real,Q25: first quantile (in kHz). In 25% data what was the maximum frequency
+Q75,real,Q75: third quantile (in kHz). In 75% of data what was the maximum value of frequency.
+IQR,real,IQR: interquantile range (in kHz). It is the range between Q25 and Q75
+skew,real,"skew: skewness (see note in specprop description). It reprsents the shape of graph. If S<0 It means left skewness, S=0 means symmetric, S>0 means right skewness"
+kurt,real,"kurt: kurtosis (see note in specprop description). It is the description of tail, It used to determine the extreme values. Lower kurtosis is good."
+sp.ent,real,sp.ent: spectral entropy. For  noisy signal it will tend to 1 and for putre signal it will tend towards 0.
+sfm,real,sfm: spectral flatness measure. For noisy signal it will tend to 1 and for putre signal it will tend towards 0.
+mode,real,mode: mode frequency. Dominant frequency
+centroid,real,centroid: frequency centroid (see specprop). It is the multiplication of frequency and relative amplitude for ith frequency.
+peakf,real,peakf: peak frequency (frequency with highest energy). 
 meanfun,real,meanfun: average of fundamental frequency measured across acoustic signal
 minfun,real,minfun: minimum fundamental frequency measured across acoustic signal
 maxfun,real,maxfun: maximum fundamental frequency measured across acoustic signal
