@@ -36,7 +36,6 @@ clf_lr.fit(x_train,y_train)
 pred=clf_lr.predict(x_test)
 print("Logistic Regression: ", accuracy_score(pred,y_test))
 
-
 clf_knn=KNeighborsClassifier()
 clf_knn.fit(x_train,y_train)
 pred=clf_knn.predict(x_test)
