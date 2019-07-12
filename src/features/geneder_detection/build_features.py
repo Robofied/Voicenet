@@ -30,6 +30,10 @@ freqs = fftfreq(audio_data.shape[0],1/samplerate)
 spec = np.abs(np.fft.rfft(audio_data))
 amp = spec[:,0] / spec[:,0].sum()
 mean = (freqs * amp).sum()
+
+z = amp - amp.mean() 
+w = amp.std() 
+
 sd = np.sqrt(np.sum(amp * ((freqs - mean) ** 2)))
 amp_cumsum = np.cumsum(amp)
 median = freqs[len(amp_cumsum[amp_cumsum <= 0.5]) + 1]
@@ -44,9 +48,7 @@ meanfun = np.average(freqs)
 minfun = np.min(freqs)
 maxfun = np.max(freqs)
 
-z = amp - amp.mean() 
-w = amp.std() 
 
 #list_schema = ['kurt', 'sp.ent', 'sfm', 'mode', 'centroid', 'meanfun', 'minfun', 'maxfun', 'meandom', 'mindom', 'maxdom', 'dfrange', 'modindx', 'label']
 feature_set = [meanfreq, sd, median, Q25, Q75, IQR,  skew, kurt, mode, meanfun, minfun, maxfun]
-print(feature_set)
+print("Feature List: ", feature_set)
