@@ -22,14 +22,13 @@ in process
 
 # Code Style
 
-'''
+```
 import voicenet import train
 obj1 = train
-train.get_gender("path of the voice file", model = "auto") #auto for automatic model selection or you can explicitly 
-# define which model you want to use
+train.get_gender("path of the voice file", model = "auto")
 ['male'] #if gender is male
 ['female'] #if gender is female
-'''
+```
 
 # Screenshots
 # Technology Stack
