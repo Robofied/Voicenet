@@ -23,7 +23,7 @@ in process
 # Code Style
 
 ```
-import voicenet import train
+from voicenet import train
 obj1 = train
 train.get_gender("path of the voice file", model = "auto")
 ['male'] #if gender is male
