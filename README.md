@@ -57,7 +57,8 @@ Or maybe through using you have an idea of your own or are looking for something
 Feel free to ask questions on the mailing list or on [Slack](https://robofied.slack.com).
 
 # Credits
-[Akshat Gupta] (https://in.linkedin.com/in/akshat-rg)
-[Ridhima Garg] (www.linkedin.com/in/ridhima-garg)
+[Akshat Gupta](https://in.linkedin.com/in/akshat-rg)
+[Ridhima Garg](www.linkedin.com/in/ridhima-garg)
+
 # License
 [BSD-3](https://github.com/Robofied/Voicenet/blob/master/LICENSE)
