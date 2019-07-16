@@ -32,7 +32,7 @@ train.get_gender("path of the voice file", model = "auto")
 
 # Screenshots
 # Technology Stack
-* Python 3.5
+* Python 3.5.2
 * Sklearn
 * Numpy
 * Pandas
