@@ -18,9 +18,24 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 pip install voicenet
 
 # Build Status
+in process
+
 # Code Style
+>>import voicenet import train
+>>obj1 = train
+>>train.get_gender("path of the voice file", model = "auto") #auto for automatic model selection or you can explicitly 
+>># define which model you want to use
+>>['male'] #if gender is male
+>>['female'] #if gender is female
+
 # Screenshots
 # Technology Stack
+* Python 3.5
+* Sklearn
+* Numpy
+* Pandas
+* Sciypy
+
 # Features
 # Code Example
 # API Reference
@@ -41,4 +56,4 @@ Feel free to ask questions on the mailing list or on [Slack](https://robofied.sl
 
 # Credits
 # License
-[BSD-3](https://github.com/Robofied/VoicenetG/blob/master/LICENSE)
+[BSD-3](https://github.com/Robofied/Voicenet/blob/master/LICENSE)
