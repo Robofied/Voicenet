@@ -4,8 +4,8 @@ Comprehensive Python library for voice/speech based functions.
 # Getting Started
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
 
-* Speechtotext (STT)
-* Geneder detection based on the voice.
+* Speech to text (STT)
+* Gender detection based on the voice.
 * Pronunciation posterior score
 * Articulation-rate
 * Speech rate
