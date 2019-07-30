@@ -37,7 +37,7 @@ train.get_gender("path of the voice file", model = "auto")
 * Sklearn
 * Numpy
 * Pandas
-* Sciypy
+* Scipy
 
 # Features
 # Code Example
@@ -63,3 +63,5 @@ Feel free to ask questions on the mailing list or on [Slack](https://robofied.sl
 
 # License
 [BSD-3](https://github.com/Robofied/Voicenet/blob/master/LICENSE)
+
+
