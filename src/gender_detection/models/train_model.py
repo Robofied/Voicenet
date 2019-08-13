@@ -176,7 +176,7 @@ class predict:
             loaded_model = joblib.load(model_name)
             result = loaded_model.score(x_test, y_test)
             print(result)
-
+        
 # Loading a saved model
 # loaded_model = joblib.load("LRmodel.sav")
 # result = loaded_model.score(x_test, y_test)
