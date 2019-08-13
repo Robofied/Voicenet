@@ -59,7 +59,7 @@ Feel free to ask questions on the mailing list or on [Slack](https://robofied.sl
 
 # Credits
 [Akshat Gupta](https://in.linkedin.com/in/akshat-rg) <br>
-[Ridhima Garg](www.linkedin.com/in/ridhima-garg) <br>
+[Ridhima Garg](https://www.linkedin.com/in/ridhima-garg) <br>
 [Laxman Singh Tomar](https://github.com/LaxmanSinghTomar)
 
 # License
