@@ -8,6 +8,7 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 * Speech to text (STT)
 * Gender detection based on the voice.
 * Pronunciation posterior score
+* Feature extraction from voice
 * Articulation-rate
 * Speech rate
 * Filler words
