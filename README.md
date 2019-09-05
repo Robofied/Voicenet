@@ -12,7 +12,10 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 * Speech rate
 * Filler words
 * Age detection from voice.
+* Speech Enhancement and Noise Reduction
 * Emotion detection from voice.
+* Speaker Identification and segmentation 
+* Speech Tagging (Silence, Speech, Noise, Laughter, Song)
 * Neural voice transfer (NVT)
 
 ### Installation
