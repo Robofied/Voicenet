@@ -1,0 +1,16 @@
+2 ways to go -:
+
+	> With gender classification
+	> Without gender Classification.
+
+
+Best to go (with gender classification)
+
+Process 
+
+Extracting MFCC features ==> Dividing dataset into categories(age_groups) ==> SVM based on GMM supervector model
+
+Agegroups
+
+male_young, male_adult, male_senior, female_young, female_adult, female_senior, child
+ 
