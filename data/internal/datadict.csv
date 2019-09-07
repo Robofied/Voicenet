@@ -1,4 +1,4 @@
-coloumn ,data-type,description
+column ,data-type,description
 meanfreq,real,meanfreq: mean frequency (in kHz). How frequent the waves are in audio  
 sd,real,sd: standard deviation of frequency. What is the frequency in 1 s.d as frequency will vary throughout the audio.
 median,real,median: median frequency (in kHz). Mean of the frequency
