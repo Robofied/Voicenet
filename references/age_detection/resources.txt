@@ -1,3 +1,9 @@
 https://www.kaggle.com/mozillaorg/common-voice
 https://smartlaboratory.org/ravdess
 https://tspace.library.utoronto.ca/handle/1807/24487
+
+
+https://voice.mozilla.org/en/datasets
+https://github.com/topics/age-classification
+https://github.com/dave-fernandes/SpeakerClassifier/
+https://github.com/rajs96/Analyzing-Voice-Samples-to-Predict-Age
