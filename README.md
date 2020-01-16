@@ -1,6 +1,6 @@
 # Voicenet
 Comprehensive Python library for speech and voice.<br><br>
-![testimage](https://github.com/Robofied/Voicenet/blob/master/reports/general_images/Voicenet.png)
+![testimage](https://github.com/Robofied/Voicenet/blob/master/Voicenet.png)
 
 # Getting Started
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
