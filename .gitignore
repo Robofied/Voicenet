@@ -85,6 +85,8 @@ target/
 *.swp
 *.swo
 
+.data
+
 # Mypy cache
 .mypy_cache/
 src/models/PNCC/
