@@ -1,7 +1,8 @@
-from python_speech_features import mfcc
+from python_speech_features import mfcc, delta
 import scipy.io.wavfile as wav
+from sklearn import preprocessing
 import os
-
+import numpy as np
 
 class mfcc_features(object):
 
@@ -11,14 +12,14 @@ class mfcc_features(object):
 
     def get_features(self):
 
-        print(self.RAW_DATA_DIR)
-        print(self.filename)
         (rate,sig) = wav.read(os.path.join(self.RAW_DATA_DIR, self.filename))
-        mfcc_feat = mfcc(sig,rate, lowfreq=0,)
-        print(mfcc_feat.shape)
-        print(mfcc_feat[:,8])
+        mfcc_feature = mfcc(sig,rate, lowfreq=0,)
+        mfcc_feature  = preprocessing.scale(mfcc_feature)
+        deltas        = delta(mfcc_feature, 2)
+        double_deltas = delta(deltas, 2)
+        combined_feature      = np.hstack((mfcc_feature, deltas, double_deltas))
 
-        return mfcc_feat
+        return combined_feature
 
 if __name__ == "__main__":
 
