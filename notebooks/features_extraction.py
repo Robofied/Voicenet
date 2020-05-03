@@ -19,8 +19,8 @@ class mfcc_features(object):
         double_deltas = delta(deltas, 2)
         combined_feature      = np.hstack((mfcc_feature, deltas, double_deltas))
 
-        # print(combined_feature.shape)
-        # print(len(combined_feature))
+        print(combined_feature.shape)
+        print(len(combined_feature))
         return combined_feature
 
 if __name__ == "__main__":
