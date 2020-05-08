@@ -25,4 +25,4 @@ from features_extraction import mfcc_features
 
 DATA_RAW_DIR = './data/raw'
 
-download.download_extract_data()
+download.download_extract_data(DATA_RAW_DIR)
