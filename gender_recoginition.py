@@ -19,8 +19,10 @@ from sklearn.metrics import accuracy_score
 
 
 ## Our-defined packages
-from utils import label_encoder
+from utils import basic_utils, download
 from features_extraction import mfcc_features
 
 
-DATA_RAW_DIR = '../data/raw/ST-AEDS'
+DATA_RAW_DIR = './data/raw'
+
+download.download_extract_data()
