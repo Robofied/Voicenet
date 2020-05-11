@@ -1,8 +1,8 @@
-# Voicenet
+## Voicenet
 Comprehensive Python library for speech and voice.<br><br>
 ![testimage](https://github.com/Robofied/Voicenet/blob/master/Voicenet.png)
 
-# Getting Started
+### Getting Started
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
 
 * Gender detection based on the voice.
@@ -17,10 +17,10 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 * Speaker Identification and segmentation 
 * Speech Tagging (Silence, Speech, Noise, Laughter, Song)
 
-# Build Status
-in development
+### Build Status
+In development
 
-# Contributing to Voicenet
+### Contributing to Voicenet
 All contributions, bug reports, bug fixes, documentation improvements, enhancements and ideas are welcome.
 
 A detailed overview on how to contribute can be found in the contributing guide. There is also an overview on GitHub.
