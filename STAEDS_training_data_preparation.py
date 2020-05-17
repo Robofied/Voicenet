@@ -1,4 +1,6 @@
 import math
+import os
+
 
 def get_fnames_from_dict(self, dataset_dict, f_or_m):
         training_data, testing_data = [], []
@@ -32,8 +34,8 @@ def manage(dataset_directory):
             dataset_dict[fname.split('_')[0]].append(fname)
 
         training_set, testing_set = {},{}
-        training_set["females"], testing_set["females"] = self.get_fnames_from_dict(dataset_dict, "f")
-        training_set["males"  ], testing_set["males"  ] = self.get_fnames_from_dict(dataset_dict, "m")
+        training_set["females"], testing_set["females"] = get_fnames_from_dict(dataset_dict, "f")
+        training_set["males"  ], testing_set["males"  ] = get_fnames_from_dict(dataset_dict, "m")
 
         self.make_folder("TrainingData")
         self.make_folder("TestingData")
