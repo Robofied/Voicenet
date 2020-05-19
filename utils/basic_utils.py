@@ -16,6 +16,8 @@ def make_folder(folder_path):
         
 def move_files(src, dst, group):
     print("Moving!")
+    print(group)
     for fname in group:
+        print(src+ '/' + fname)
         os.rename(src + '/' + fname, dst + '/' + fname)
     
