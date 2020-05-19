@@ -15,6 +15,7 @@ def make_folder(folder_path):
         print("Exception raised: ", folder_path, "could not be created !")
         
 def move_files(src, dst, group):
+    print("Moving!")
     for fname in group:
         os.rename(src + '/' + fname, dst + '/' + fname)
     

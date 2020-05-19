@@ -1,8 +1,9 @@
 import math
 import os
+from utils.basic_utils import make_folder, move_files
 
 
-def get_fnames_from_dict(self, dataset_dict, f_or_m):
+def get_fnames_from_dict(dataset_dict, f_or_m):
         training_data, testing_data = [], []
 
         for i in range(1,5):
@@ -37,14 +38,14 @@ def manage(dataset_directory):
         training_set["females"], testing_set["females"] = get_fnames_from_dict(dataset_dict, "f")
         training_set["males"  ], testing_set["males"  ] = get_fnames_from_dict(dataset_dict, "m")
 
-        self.make_folder("TrainingData")
-        self.make_folder("TestingData")
-        self.make_folder("TrainingData/females")
-        self.make_folder("TrainingData/males")
-        self.make_folder("TestingData/females")
-        self.make_folder("TestingData/males")
+        make_folder("TrainingData")
+        make_folder("TestingData")
+        make_folder("TrainingData/females")
+        make_folder("TrainingData/males")
+        make_folder("TestingData/females")
+        make_folder("TestingData/males")
 
-        self.move_files(dataset_directory, "TrainingData/females", training_set["females"])
-        self.move_files(dataset_directory, "TrainingData/males",   training_set["males"])
-        self.move_files(dataset_directory, "TestingData/females",  testing_set["females"])
-        self.move_files(dataset_directory, "TestingData/males",    testing_set["males"])
+        move_files(dataset_directory, "TrainingData/females", training_set["females"])
+        move_files(dataset_directory, "TrainingData/males",   training_set["males"])
+        move_files(dataset_directory, "TestingData/females",  testing_set["females"])
+        move_files(dataset_directory, "TestingData/males",    testing_set["males"])

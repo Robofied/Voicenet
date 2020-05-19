@@ -21,8 +21,14 @@ from sklearn.metrics import accuracy_score
 ## Our-defined packages
 from utils import basic_utils, download
 from features_extraction import mfcc_features
+from STAEDS_training_data_preparation import manage
 
 
 DATA_RAW_DIR = './data/raw'
+DATA_PROCESSED = './data/processed'
+STAEDS = 'ST-AEDS'
 
 download.download_extract_data(DATA_RAW_DIR)
+
+manage(os.path.join(DATA_RAW_DIR, STAEDS))
+
