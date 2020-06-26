@@ -1,5 +1,5 @@
 from sklearn.preprocessing import LabelEncoder
-import os
+import os, pickle
 
 def label_encoder(list_cat_var):
     le = LabelEncoder()
@@ -20,4 +20,14 @@ def move_files(src, dst, group):
     for fname in group:
         print(src+ '/' + fname)
         os.rename(src + '/' + fname, dst + '/' + fname)
+    
+def save_gmm_model(gmm, name):
+    
+    filename = ''.join([name, '.gmm'])
+    
+    with open(filename, 'wb') as gmm_file:
+        pickle.dump(gmm, gmm_file)
+        
+    
+     
     
