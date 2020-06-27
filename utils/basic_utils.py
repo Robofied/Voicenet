@@ -28,9 +28,9 @@ def get_file_paths(females_training_path, males_training_path):
     
     return females, males
 
-def save_gmm_model(gmm, name):
+def save_gmm_model(gmm, directory_file_name):
     
-    filename = ''.join([name, '.gmm'])
+    filename = ''.join([directory_file_name, '.gmm'])
     
     with open(filename, 'wb') as gmm_file:
         pickle.dump(gmm, gmm_file)

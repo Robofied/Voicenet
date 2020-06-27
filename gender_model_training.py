@@ -26,6 +26,7 @@ from STAEDS_training_data_preparation import manage
 
 DATA_RAW_DIR = './data/raw'
 DATA_PROCESSED = './data/processed'
+MODEL_DIR = './models'
 STAEDS = 'ST-AEDS'
 
 def collect_features(files_list):
@@ -67,8 +68,8 @@ males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type =
 females_gmm.fit(female_mfcc_features)
 males_gmm.fit(male_mfcc_features)
 
-basic_utils.save_gmm_model(females_gmm, 'females_gmm_model')
-basic_utils.save_gmm_model(males_gmm, 'males_gmm_model')
+basic_utils.save_gmm_model(females_gmm, os.path.join(MODEL_DIR,'females_gmm_model'))
+basic_utils.save_gmm_model(males_gmm, os.path.join(MODEL_DIR,'males_gmm_model'))
 
 
 
