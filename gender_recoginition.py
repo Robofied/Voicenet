@@ -20,7 +20,7 @@ from sklearn.metrics import accuracy_score
 
 ## Our-defined packages
 from utils import basic_utils, download
-from features_extraction import mfcc_features
+from utils.features_extraction import mfcc_features
 from STAEDS_training_data_preparation import manage
 
 
@@ -28,7 +28,44 @@ DATA_RAW_DIR = './data/raw'
 DATA_PROCESSED = './data/processed'
 STAEDS = 'ST-AEDS'
 
+def collect_features(files_list):
+    
+    features = np.asarray(())
+    
+    for file in files_list:
+        
+        mfccfeatures = mfcc_features()
+        vector = mfccfeatures.get_features(file)
+        
+        ## If features array is empty then stacking is not possible.
+        if features.size == 0:
+            features = vector
+            
+        else:
+            features = np.vstack((features, vector))
+            
+    return features
+            
+        
 download.download_extract_data(DATA_RAW_DIR)
 
 manage(os.path.join(DATA_RAW_DIR, STAEDS))
+
+females, males = basic_utils.get_file_paths(os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/females'), os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/males') )
+
+print(females, males)
+
+female_mfcc_features = collect_features(females)
+male_mfcc_features = collect_features(males)
+
+print(female_mfcc_features)
+
+females_gmm = GMM(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
+males_gmm = GMM(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
+
+# fit features to models
+females_gmm.fit(female_mfcc_features)
+males_gmm.fit(male_mfcc_features)
+
+
 

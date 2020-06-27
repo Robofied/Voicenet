@@ -21,6 +21,13 @@ def move_files(src, dst, group):
         print(src+ '/' + fname)
         os.rename(src + '/' + fname, dst + '/' + fname)
     
+def get_file_paths(females_training_path, males_training_path):
+    
+    females = [ os.path.join(females_training_path, f) for f in os.listdir(females_training_path) ]
+    males = [ os.path.join(males_training_path, f) for f in os.listdir(males_training_path) ]
+    
+    return females, males
+
 def save_gmm_model(gmm, name):
     
     filename = ''.join([name, '.gmm'])
