@@ -60,12 +60,16 @@ male_mfcc_features = collect_features(males)
 
 print(female_mfcc_features)
 
-females_gmm = GMM(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
-males_gmm = GMM(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
+females_gmm = GaussianMixture(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
+males_gmm = GaussianMixture(n_components = 16, n_iter = 200, covariance_type = 'diag', n_init = 3)
 
 # fit features to models
 females_gmm.fit(female_mfcc_features)
 males_gmm.fit(male_mfcc_features)
+
+basic_utils.save_gmm_model(females_gmm, 'females_gmm_model')
+basic_utils.save_gmm_model(males_gmm, 'males_gmm_model')
+
 
 
 
