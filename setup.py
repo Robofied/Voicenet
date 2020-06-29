@@ -5,6 +5,6 @@ setup(
     packages=find_packages(),
     version='0.1.0',
     description='Voicenet is a comprehensive library',
-    author='Akshat Gupta ',
+    author='Akshat Gupta, Ridhima Garg',
     license='BSD-3',
 )
