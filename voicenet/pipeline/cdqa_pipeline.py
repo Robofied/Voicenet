@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import os
 
-from utils.features_extraction import mfcc_features
+from voicenet.utils.features_extraction import mfcc_features
 
 MODELS = {'gmm': ['females_gmm_model.gmm', 'males_gmm_model.gmm']}
 
