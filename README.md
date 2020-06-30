@@ -2,7 +2,7 @@
 Comprehensive Python library for speech and voice.<br><br>
 ![testimage](https://github.com/Robofied/Voicenet/blob/master/Voicenet.png)
 
-### Getting Started
+## Getting Started
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
 
 * Gender detection based on the voice.
@@ -65,6 +65,17 @@ model_save_dir = 'path-to-save-trained-model'
 gmm_model.train_model(data_dir = data_dir, model_dir = model_save_dir)
 ```
 
+### Making Predictions
+
+```python
+from voicenet.pipeline import VoicePipeline
+
+voicenet = VoicePipeline()      
+winner = voicenet.predict('wav-file-path.wav')
+
+print(winner)
+
+```
 
 ## Contributing to Voicenet
 
