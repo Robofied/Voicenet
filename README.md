@@ -29,7 +29,7 @@ In development, released [first model](https://github.com/Robofied/Voicenet/rele
 
 ### From Source
 
-```
+```python
 git clone https://github.com/Robofied/Voicenet
 cd Voicenet
 pip install -e .
@@ -54,7 +54,16 @@ download_staeds_extract_data(direc=directory)
 
 ### Training Models
 
+```python
+from voicenet.training import GMMModelTraining
 
+gmm_model = GMMModelTraining()
+
+data_dir = 'path-to-load-data-from'
+model_save_dir = 'path-to-save-trained-model'
+
+gmm_model.train_model(data_dir = data_dir, model_dir = model_save_dir)
+```
 
 
 ## Contributing to Voicenet
