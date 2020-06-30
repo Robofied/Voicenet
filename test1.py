@@ -2,4 +2,4 @@
 
 # voice = vp.cdqa_pipeline.VoicePipeline()
 
-from voicenet.pipeline.cdqa_pipeline import VoicePipeline
+from voicenet.pipeline import VoicePipeline
