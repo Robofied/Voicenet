@@ -18,16 +18,16 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 * Speaker Identification and segmentation 
 * Speech Tagging (Silence, Speech, Noise, Laughter, Song) -->
 
-### Build Status
+## Build Status
 
 In development, released [first model](https://github.com/Robofied/Voicenet/releases/tag/v1.0).
 
-### Installation
+## Installation
 
-#### With pip
+### With pip
 
 
-#### From Source
+### From Source
 
 ```
 git clone https://github.com/Robofied/Voicenet
@@ -35,9 +35,29 @@ cd Voicenet
 pip install -e .
 ```
 
-#### Hardware Requirements
+### Hardware Requirements
 
-### Contributing to Voicenet
+## Getting Started
+
+### Downloading pre-trained models and data
+
+You can download the models and data manually from the GitHub releases or use our download functions:
+
+```
+from voicenet.utils.download import download_staeds_extract_data
+
+directory = 'path-to-directory'
+
+download_staeds_extract_data(direc=directory)
+
+```
+
+### Training Models
+
+
+
+
+## Contributing to Voicenet
 
 All contributions, bug reports, bug fixes, documentation improvements, enhancements and ideas are welcome.
 
