@@ -43,7 +43,7 @@ pip install -e .
 
 You can download the models and data manually from the GitHub releases or use our download functions:
 
-```
+```python
 from voicenet.utils.download import download_staeds_extract_data
 
 directory = 'path-to-directory'
