@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 import os
+import logging
 
 from voicenet.utils.features_extraction import mfcc_features
 
@@ -53,7 +54,7 @@ class VoicePipeline():
         vector = mfccfeatures.get_features(audiofile)
 
         winner = self.identify_gender(female_model,male_model,vector)
-        print(winner)
+        logging.info("Winner is {}".format(winner))
         
         return winner
         
