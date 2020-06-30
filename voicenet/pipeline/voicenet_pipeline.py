@@ -8,9 +8,8 @@ from voicenet.utils.features_extraction import mfcc_features
 MODELS = {'gmm': ['females_gmm_model.gmm', 'males_gmm_model.gmm']}
 
 MODEL_DIR = 'models/'
-FEMALE_GMM_MODELFILE = 'females_gmm_model.gmm'
-MALE_GMM_MODELFILE = 'males_gmm_model.gmm'
-
+# FEMALE_GMM_MODELFILE = 'females_gmm_model.gmm'
+# MALE_GMM_MODELFILE = 'males_gmm_model.gmm'
 class VoicePipeline():
     
     def __init__(self, model="gmm", trained_models= None):

@@ -19,8 +19,8 @@ from sklearn.metrics import accuracy_score
 
 
 ## Our-defined packages
-from utils import basic_utils, download
-from utils.features_extraction import mfcc_features
+from voicenet.utils import basic_utils, download
+from voicenet.utils.features_extraction import mfcc_features
 from STAEDS_training_data_preparation import manage
 
 
@@ -29,47 +29,89 @@ DATA_PROCESSED = './data/processed'
 MODEL_DIR = './models'
 STAEDS = 'ST-AEDS'
 
-def collect_features(files_list):
+class GMMModelTraining:
     
-    features = np.asarray(())
+    def __init__(self, staeds_flag=True):  
+        
+        self.staeds_flag = staeds_flag
+        pass  
+        
+        # if staeds_flag:
+            
+        #     self.DATA_RAW_DIR = 
+
+    def collect_features(self, files_list):
+        
+        features = np.asarray(())
+        
+        for file in files_list:
+            
+            mfccfeatures = mfcc_features()
+            vector = mfccfeatures.get_features(file)
+            
+            ## If features array is empty then stacking is not possible.
+            if features.size == 0:
+                features = vector
+                
+            else:
+                features = np.vstack((features, vector))
+                
+        return features
     
-    for file in files_list:
+    def train_model(self, data_dir):
         
-        mfccfeatures = mfcc_features()
-        vector = mfccfeatures.get_features(file)
         
-        ## If features array is empty then stacking is not possible.
-        if features.size == 0:
-            features = vector
+        if self.staeds_flag:
             
-        else:
-            features = np.vstack((features, vector))
-            
-    return features
+            download.download_staeds_extract_data(data_dir)
+            manage(os.path.join(DATA_RAW_DIR, STAEDS))
+
+            females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
+
+        ## else: need to split download and split data in not staeds
+        
+        print(females, males)
+
+        female_mfcc_features = self.collect_features(females)
+        male_mfcc_features = self.collect_features(males)
+
+        print(female_mfcc_features)
+
+        females_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
+        males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
+
+        # fit features to models
+        females_gmm.fit(female_mfcc_features)
+        males_gmm.fit(male_mfcc_features)
+
+        basic_utils.save_gmm_model(females_gmm, os.path.join(MODEL_DIR,'females_gmm_model'))
+        basic_utils.save_gmm_model(males_gmm, os.path.join(MODEL_DIR,'males_gmm_model'))
+
+        
             
         
-download.download_extract_data(DATA_RAW_DIR)
+# download.download_extract_data(DATA_RAW_DIR)
 
-manage(os.path.join(DATA_RAW_DIR, STAEDS))
+# manage(os.path.join(DATA_RAW_DIR, STAEDS))
 
-females, males = basic_utils.get_file_paths(os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/females'), os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/males') )
+# females, males = basic_utils.get_file_paths(os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/females'), os.path.join(DATA_RAW_DIR, STAEDS,'TrainingData/males') )
 
-print(females, males)
+# print(females, males)
 
-female_mfcc_features = collect_features(females)
-male_mfcc_features = collect_features(males)
+# female_mfcc_features = collect_features(females)
+# male_mfcc_features = collect_features(males)
 
-print(female_mfcc_features)
+# print(female_mfcc_features)
 
-females_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
-males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
+# females_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
+# males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
 
-# fit features to models
-females_gmm.fit(female_mfcc_features)
-males_gmm.fit(male_mfcc_features)
+# # fit features to models
+# females_gmm.fit(female_mfcc_features)
+# males_gmm.fit(male_mfcc_features)
 
-basic_utils.save_gmm_model(females_gmm, os.path.join(MODEL_DIR,'females_gmm_model'))
-basic_utils.save_gmm_model(males_gmm, os.path.join(MODEL_DIR,'males_gmm_model'))
+# basic_utils.save_gmm_model(females_gmm, os.path.join(MODEL_DIR,'females_gmm_model'))
+# basic_utils.save_gmm_model(males_gmm, os.path.join(MODEL_DIR,'males_gmm_model'))
 
 
 
