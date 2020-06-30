@@ -6,8 +6,9 @@ Comprehensive Python library for speech and voice.<br><br>
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
 
 * Gender detection based on the voice.
-* Pronunciation posterior score
 * Feature extraction from voice
+
+<!-- * Pronunciation posterior score
 * Articulation-rate
 * Speech rate
 * Filler words
@@ -15,12 +16,29 @@ Voicenet is a comprehensive library for performing speech/voice based functions.
 * Speech Enhancement and Noise Reduction
 * Emotion detection from voice.
 * Speaker Identification and segmentation 
-* Speech Tagging (Silence, Speech, Noise, Laughter, Song)
+* Speech Tagging (Silence, Speech, Noise, Laughter, Song) -->
 
 ### Build Status
-In development
+
+In development, released [first model](https://github.com/Robofied/Voicenet/releases/tag/v1.0).
+
+### Installation
+
+#### With pip
+
+
+#### From Source
+
+```
+git clone https://github.com/Robofied/Voicenet
+cd Voicenet
+pip install -e .
+```
+
+#### Hardware Requirements
 
 ### Contributing to Voicenet
+
 All contributions, bug reports, bug fixes, documentation improvements, enhancements and ideas are welcome.
 
 A detailed overview on how to contribute can be found in the contributing guide. There is also an overview on GitHub.
