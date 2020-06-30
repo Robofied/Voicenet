@@ -1,5 +1,6 @@
 from sklearn.preprocessing import LabelEncoder
 import os, pickle
+import logging
 
 def label_encoder(list_cat_var):
     le = LabelEncoder()
@@ -29,6 +30,8 @@ def get_file_paths(females_training_path, males_training_path):
     return females, males
 
 def save_gmm_model(gmm, directory_file_name):
+    
+    logging.info("Saving gmm model")
     
     filename = ''.join([directory_file_name, '.gmm'])
     
