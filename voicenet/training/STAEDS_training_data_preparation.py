@@ -1,6 +1,6 @@
 import math
 import os
-from utils.basic_utils import make_folder, move_files
+from voicenet.utils.basic_utils import make_folder, move_files
 
 
 def get_fnames_from_dict(dataset_dict, f_or_m):

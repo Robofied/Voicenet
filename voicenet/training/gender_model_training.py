@@ -21,24 +21,19 @@ from sklearn.metrics import accuracy_score
 ## Our-defined packages
 from voicenet.utils import basic_utils, download
 from voicenet.utils.features_extraction import mfcc_features
-from STAEDS_training_data_preparation import manage
+from voicenet.training.STAEDS_training_data_preparation import manage
 
 
-DATA_RAW_DIR = './data/raw'
-DATA_PROCESSED = './data/processed'
-MODEL_DIR = './models'
+# DATA_RAW_DIR = './data/raw'
+# DATA_PROCESSED = './data/processed'
+# MODEL_DIR = './models'
 STAEDS = 'ST-AEDS'
 
 class GMMModelTraining:
     
     def __init__(self, staeds_flag=True):  
         
-        self.staeds_flag = staeds_flag
-        pass  
-        
-        # if staeds_flag:
-            
-        #     self.DATA_RAW_DIR = 
+        self.staeds_flag = staeds_flag        
 
     def collect_features(self, files_list):
         
@@ -58,13 +53,13 @@ class GMMModelTraining:
                 
         return features
     
-    def train_model(self, data_dir):
+    def train_model(self, data_dir, model_dir):
         
         
         if self.staeds_flag:
             
             download.download_staeds_extract_data(data_dir)
-            manage(os.path.join(DATA_RAW_DIR, STAEDS))
+            manage(os.path.join(data_dir, STAEDS))
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 
@@ -84,8 +79,8 @@ class GMMModelTraining:
         females_gmm.fit(female_mfcc_features)
         males_gmm.fit(male_mfcc_features)
 
-        basic_utils.save_gmm_model(females_gmm, os.path.join(MODEL_DIR,'females_gmm_model'))
-        basic_utils.save_gmm_model(males_gmm, os.path.join(MODEL_DIR,'males_gmm_model'))
+        basic_utils.save_gmm_model(females_gmm, os.path.join(model_dir,'females_gmm_model'))
+        basic_utils.save_gmm_model(males_gmm, os.path.join(model_dir,'males_gmm_model'))
 
         
             
