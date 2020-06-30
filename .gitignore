@@ -78,7 +78,7 @@ target/
 # exclude data from source control by default
 /data/
 
-.voicenet_venv/
+voicenet_venv/
 
 # Mac OS-specific storage files
 .DS_Store
