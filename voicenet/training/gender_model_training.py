@@ -5,6 +5,9 @@
 import numpy as np
 import pandas as pd
 import os, sys, wave
+import logging
+
+
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import accuracy_score
 
@@ -13,6 +16,11 @@ from sklearn.metrics import accuracy_score
 from voicenet.utils import basic_utils, download
 from voicenet.utils.features_extraction import mfcc_features
 from voicenet.training.STAEDS_training_data_preparation import manage
+
+"""Setup"""
+# logger setup
+basic_utils.setup_logging()
+logger = logging.getLogger(__name__)
 
 ## GLOBAL VARIABLES
 STAEDS = 'ST-AEDS'
@@ -28,6 +36,8 @@ class GMMModelTraining:
         features = np.asarray(())
         
         for file in files_list:
+            
+            logger.info("Creating features for {0}".format(file))
             
             mfccfeatures = mfcc_features()
             vector = mfccfeatures.get_features(file)
@@ -46,6 +56,8 @@ class GMMModelTraining:
         
         if self.staeds_flag:
             
+            logger.info("Working on STAEDS data")
+            
             download.download_staeds_extract_data(data_dir)
             manage(os.path.join(data_dir, STAEDS))
 
@@ -53,12 +65,14 @@ class GMMModelTraining:
 
         ## else: need to split download and split data in not staeds
         
-        print(females, males)
+        # logger.info(females, males)
 
         female_mfcc_features = self.collect_features(females)
         male_mfcc_features = self.collect_features(males)
 
-        print(female_mfcc_features)
+        # print(female_mfcc_features)
+        
+        logger.info("Fitting GMM Model for females and males")
 
         females_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
         males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
