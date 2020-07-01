@@ -31,7 +31,7 @@ class Accuracy:
                 self.error += 1
                 
         acc = ((len(f) - self.error)/len(f)) * 100  
-        print(f"Testing Accuracy {0}%", acc)
+        print("Testing Accuracy {0}%".format(acc))
         
             
             
