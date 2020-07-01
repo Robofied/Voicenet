@@ -83,6 +83,11 @@ class GMMModelTraining:
 
         basic_utils.save_gmm_model(females_gmm, os.path.join(model_dir,'females_gmm_model'))
         basic_utils.save_gmm_model(males_gmm, os.path.join(model_dir,'males_gmm_model'))
+        
+        
+        
+        
+        
 
         
             

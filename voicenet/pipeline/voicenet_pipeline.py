@@ -4,9 +4,17 @@ import os
 import logging
 
 from voicenet.utils.features_extraction import mfcc_features
+from voicenet.utils import basic_utils
 
+
+"""Setup"""
+# logger setup
+basic_utils.setup_logging()
+logger = logging.getLogger(__name__)
+
+
+## GLOBAL VARIABLES
 MODELS = {'gmm': ['females_gmm_model.gmm', 'males_gmm_model.gmm']}
-
 MODEL_DIR = 'models/'
 # FEMALE_GMM_MODELFILE = 'females_gmm_model.gmm'
 # MALE_GMM_MODELFILE = 'males_gmm_model.gmm'
@@ -27,8 +35,8 @@ class VoicePipeline():
         is_male_score = np.array(male_model.score(vector))
         is_male_log_likelihood = is_male_score.sum()
         
-        print("Female Likelihood {0}".format(is_female_log_likelihood))
-        print("Male Likelihood {0}".format(is_male_log_likelihood))
+        logger.info("Female Likelihood {0}".format(is_female_log_likelihood))
+        logger.info("Male Likelihood {0}".format(is_male_log_likelihood))
             
         
         if is_male_log_likelihood > is_female_log_likelihood:
@@ -42,6 +50,7 @@ class VoicePipeline():
         
         mfccfeatures = mfcc_features()
         
+        logger.info("Getting trained models from directory")
         trained_models = self.trained_models
         print(trained_models)
 
@@ -50,6 +59,7 @@ class VoicePipeline():
         female_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[0]),'rb'))
         male_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[1]), 'rb'))
 
+        logger.info("Creating features for audofile")
         vector = mfccfeatures.get_features(audiofile)
 
         winner = self.identify_gender(female_model,male_model,vector)
