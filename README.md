@@ -41,7 +41,7 @@ pip install -e .
 
 ### Downloading pre-trained models and data
 
-You can download the models and data manually from the GitHub releases or use our download functions:
+You can download the models and data manually from the GitHub [releases](https://github.com/Robofied/Voicenet/releases) or use our download functions:
 
 ```python
 from voicenet.utils.download import download_staeds_extract_data
