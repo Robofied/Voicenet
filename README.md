@@ -1,5 +1,5 @@
 ## Voicenet
-Comprehensive Python library for speech and voice.<br><br>
+Comprehensive Python library for speech :speech_balloon: and voice :sound:.<br><br>
 ![testimage](https://github.com/Robofied/Voicenet/blob/master/Voicenet.png)
 
 ## Getting Started
