@@ -15,7 +15,8 @@ from sklearn.metrics import accuracy_score
 ## Our-defined packages
 from voicenet.utils import basic_utils, download
 from voicenet.utils.features_extraction import mfcc_features
-from voicenet.training import SplitData
+from .data_preparation import SplitData
+
 
 """Setup"""
 # logger setup
@@ -51,15 +52,14 @@ class GMMModelTraining:
                 
         return features
     
-    def train_model(self, data_dir, model_dir):
-        
+    def train_model(self, data_dir, model_dir, data_dir_females=None, data_dir_males=None,):
         
         if self.staeds_flag:
             
             logger.info("Working on STAEDS data")
             
             download.download_staeds_extract_data(data_dir)
-            SplitData.staeds_training_data_preparation(os.path.join(data_dir, STAEDS))
+            SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 
@@ -67,8 +67,11 @@ class GMMModelTraining:
         
         else:
             
+            # SplitData.universal_data_preparation(data_dir, os.path.join(data_dir, "females"), os.path.join(data_dir,"males"))
+            SplitData.universal_data_preparation(data_dir, data_dir_females, data_dir_males)
             
-        
+            females, males = basic_utils.get_file_paths(os.path.join(data_dir,'TrainingData/females'), os.path.join(data_dir,'TrainingData/males') )
+
             
         # logger.info(females, males)
 
