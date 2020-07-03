@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score
 ## Our-defined packages
 from voicenet.utils import basic_utils, download
 from voicenet.utils.features_extraction import mfcc_features
-from voicenet.training.STAEDS_training_data_preparation import manage
+from voicenet.training import SplitData
 
 """Setup"""
 # logger setup
@@ -59,12 +59,17 @@ class GMMModelTraining:
             logger.info("Working on STAEDS data")
             
             download.download_staeds_extract_data(data_dir)
-            manage(os.path.join(data_dir, STAEDS))
+            SplitData.staeds_training_data_preparation(os.path.join(data_dir, STAEDS))
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 
         ## else: need to split download and split data in not staeds
         
+        else:
+            
+            
+        
+            
         # logger.info(females, males)
 
         female_mfcc_features = self.collect_features(females)
