@@ -54,7 +54,10 @@ download_staeds_extract_data(direc=directory)
 
 ### Training Models
 
+1. ST-AEDS Dataset
+
 ```python
+
 from voicenet.training import GMMModelTraining
 
 gmm_model = GMMModelTraining()
@@ -63,6 +66,27 @@ data_dir = 'path-to-load-data-from'
 model_save_dir = 'path-to-save-trained-model'
 
 gmm_model.train_model(data_dir = data_dir, model_dir = model_save_dir)
+```
+
+2. Any other dataset
+
+```python
+
+from voicenet.training import GMMModelTraining
+
+gmm_model = GMMModelTraining(staeds_flag=False)
+
+data_dir = 'path-to-load-data-from-containing-females-males-folder'
+
+data_dir_females = 'path-to-load-data-from-containing-females-males-folder-and-load-only-females'
+
+data_dir_males = 'path-to-load-data-from-containing-females-males-folder-and-load-only-males'
+
+model_save_dir = 'path-to-save-trained-model'
+
+## Examples to load females/males data
+gmm_model.train_model(data_dir='data/raw/test', data_dir_females='data/raw/test/females', data_dir_males='data/raw/test/males', model_dir='models/')
+
 ```
 
 ### Making Predictions
