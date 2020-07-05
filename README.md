@@ -58,6 +58,18 @@ download_staeds_extract_data(direc=directory)
 
 ### Training Models
 
+#### Preparing Your Data
+
+1. ST-AEDS Dataset
+
+If you are planning to work on ST-AEDS Dataset then you can do it either manually or with converters
+
+a. Manual
+
+You have to download ST-AEDS Dataset from [here]() and then extract it and split it into training and testing sets for females and males both separately as shown below(directory structure) 
+
+![directory-structure](https://github.com/Robofied/Voicenet/blob/master/ST-AEDS-directory.png)
+
 1. ST-AEDS Dataset
 
 ```python
