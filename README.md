@@ -86,7 +86,7 @@ SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
 
 ```
 
-#### 2. Any another dataset(Custom dataset)
+#### 2. Any other dataset(Custom dataset)
 
 a. Manual
 
