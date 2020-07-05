@@ -37,6 +37,10 @@ pip install -e .
 
 ### Hardware Requirements
 
+Models are trained and run on these machines -:
+
+CPU(Octa-Core) 16GB RAM - Ubuntu 19.04 
+
 ## Getting Started
 
 ### Downloading pre-trained models and data
