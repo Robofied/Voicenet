@@ -57,9 +57,11 @@ download_staeds_extract_data(direc=directory)
 ```
 If you are looking to work on ST-AEDS dataset with model training(we arlready have trained model but incase you want to train model again.) then you can skip this step as [training module](#Training-Models) already perform this step.
 
+
+
 ### Preparing Your Data
 
-If you are planning to use [training modules](#Training-Models) of Voicenet then you can skip this step totally for ST-AEDS dataset.
+If you are planning to use [training modules](#Training-Models) of Voicenet then you can skip this step totally for ST-AEDS dataset and for any other dataset you have to download data in a [specific format](#Any-other-dataset) and then skip it if want to use training modules
 
 #### 1. ST-AEDS Dataset
 
@@ -75,6 +77,7 @@ b. With converters
 
 ```python
 from voicenet.utils.download import download_staeds_extract_data
+from voicenet.data_preparation import SplitData
 
 directory = 'path-to-directory'
 
@@ -83,13 +86,33 @@ SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
 
 ```
 
-#### 2. Any another dataset
+#### 2. Any another dataset(Custom dataset)
 
 a. Manual
 
 You have to download/save your data into a directory which also contains subfolders female, male with thier respective females and males voice file.
 
-Moving forward you need to prepare data i.e, training/testing data splitting and follow this [directory structure](#ST-AEDS-Dataset)
+Moving forward you need to prepare data i.e, training/testing data splitting and follow this [directory structure](#ST--AEDS-Dataset)
+
+b. With converters
+
+You have to dowload/save your data into a directory which should contains subfolders female, male with thier respective females and males voice file.
+
+But in order to split dataset you can use -:
+
+```python
+
+from voicenet.data_preparation import SplitData
+
+data_dir = 'path-to-load-data-from-containing-females-males-folder'
+
+data_dir_females = 'path-to-load-data-from-containing-females-males-folder-and-load-only-females'
+
+data_dir_males = 'path-to-load-data-from-containing-females-males-folder-and-load-only-males'
+
+SplitData.universal_data_preparation(data_dir, data_dir_females, data_dir_males)
+
+```
 
 
 
