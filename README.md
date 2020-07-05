@@ -58,6 +58,19 @@ download_staeds_extract_data(direc=directory)
 If you are looking to work on ST-AEDS dataset with model training(we arlready have trained model but incase you want to train model again.) then you can skip this step as [training module](#Training-Models) already perform this step.
 
 
+### Making Predictions
+
+Trained models are saved in 'models/' directory
+
+```python
+from voicenet.pipeline import VoicePipeline
+
+voicenet = VoicePipeline()      
+winner = voicenet.predict('wav-file-path.wav')
+
+print(winner)
+
+```
 
 ### Preparing Your Data
 
@@ -155,17 +168,6 @@ gmm_model.train_model(data_dir='data/raw/test', data_dir_females='data/raw/test/
 
 ```
 
-### Making Predictions
-
-```python
-from voicenet.pipeline import VoicePipeline
-
-voicenet = VoicePipeline()      
-winner = voicenet.predict('wav-file-path.wav')
-
-print(winner)
-
-```
 
 ## Contributing to Voicenet
 
