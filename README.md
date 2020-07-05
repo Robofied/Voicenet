@@ -61,7 +61,7 @@ If you are looking to work on ST-AEDS dataset with model training(we arlready ha
 
 ### Preparing Your Data
 
-If you are planning to use [training modules](#Training-Models) of Voicenet then you can skip this step totally for ST-AEDS dataset and for any other dataset you have to download data in a [specific format](#Any-other-dataset) and then skip it if want to use training modules
+If you are planning to use [training modules](#Training-Models) of Voicenet then you can skip this step totally for ST-AEDS dataset and for any other dataset you have to download data in a [specific format](#2.-Any-other-dataset) and then skip it if want to use training modules
 
 #### 1. ST-AEDS Dataset
 
