@@ -65,6 +65,8 @@ Trained models are saved in 'models/' directory
 ```python
 from voicenet.pipeline import VoicePipeline
 
+## VoicePipeline is initialize with "gmm" model as it will use by default gmm models
+## VoicePipeline(model="gmm") //by deafult, other options are not available for now. 
 voicenet = VoicePipeline()      
 winner = voicenet.predict('wav-file-path.wav')
 
