@@ -87,6 +87,9 @@ SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
 
 a. Manual
 
+You have to download/save your data into a directory which also contains subfolders female, male with thier respective females and males voice file.
+
+Moving forward you need to prepare data i.e, training/testing data splitting and follow this [directory structure](#ST-AEDS-Dataset)
 
 
 
