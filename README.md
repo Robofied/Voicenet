@@ -55,20 +55,44 @@ directory = 'path-to-directory'
 download_staeds_extract_data(direc=directory)
 
 ```
+If you are looking to work on ST-AEDS dataset with model training(we arlready have trained model but incase you want to train model again.) then you can skip this step as [training module](#Training-Models) already perform this step.
 
-### Training Models
+### Preparing Your Data
 
-#### Preparing Your Data
+If you are planning to use [training modules](#Training-Models) of Voicenet then you can skip this step totally for ST-AEDS dataset.
 
-1. ST-AEDS Dataset
+#### 1. ST-AEDS Dataset
 
-If you are planning to work on ST-AEDS Dataset then you can do it either manually or with converters
+<!-- If you are planning to work on ST-AEDS Dataset then you can do it either manually or with converters -->
 
 a. Manual
 
 You have to download ST-AEDS Dataset from [here]() and then extract it and split it into training and testing sets for females and males both separately as shown below(directory structure) 
 
 ![directory-structure](https://github.com/Robofied/Voicenet/blob/master/ST-AEDS-directory.png)
+
+b. With converters
+
+```python
+from voicenet.utils.download import download_staeds_extract_data
+
+directory = 'path-to-directory'
+
+download_staeds_extract_data(direc=directory)
+SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
+
+```
+
+#### 2. Any another dataset
+
+a. Manual
+
+
+
+
+### Training Models
+
+
 
 1. ST-AEDS Dataset
 
