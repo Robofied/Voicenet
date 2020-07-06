@@ -28,11 +28,28 @@ STAEDS = 'ST-AEDS'
 
 class GMMModelTraining:
     
+    """ Trains GMM Model 
+    
+        Argumets
+        --------
+        staeds_flag: If user wants to train/retrain GMM model for staeds dataset.
+        
+    """
+    
     def __init__(self, staeds_flag=True):  
         
         self.staeds_flag = staeds_flag        
 
     def collect_features(self, files_list):
+        
+        """ Create features for all '.wav' files contains in files_list
+        
+        Arguments:
+            files_list: [takes a list of '.wav' training files]
+
+        Returns:
+            features: [creates a vector of all .wav training files]
+        """
         
         features = np.asarray(())
         
