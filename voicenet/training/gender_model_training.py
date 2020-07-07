@@ -48,7 +48,7 @@ class GMMModelTraining:
             files_list: [takes a list of '.wav' training files]
 
         Returns:
-            features: [creates a vector of all .wav training files]
+            features: [creates a vector of all .wav training files and stack them over as an array]
         """
         
         features = np.asarray(())
@@ -70,6 +70,23 @@ class GMMModelTraining:
         return features
     
     def train_model(self, data_dir, model_dir, data_dir_females=None, data_dir_males=None,):
+        
+        """ train a gmm model for data provided
+        
+        Arguments:
+            data_dir: Splitting data from this directory for training and testing
+            
+            model_dir: directory where model will be saved
+            
+            data_dir_females: Splitting data from this directory for females for training and testing
+            
+            data_dir_males: Splitting data from this directory for males for training and testing
+            
+        Returns:
+            Saved trained gmm models into model_dir
+        
+        
+        """
         
         if self.staeds_flag:
             
