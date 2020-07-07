@@ -5,11 +5,39 @@ from voicenet.utils.basic_utils import make_folder, move_files
 
 class SplitData:
     
+    """ Splitting data for staeds data or any universal data
+    
+    Attributes
+    ----------
+    
+    None
+    
+    Methods
+    -------
+        get_fnames_from_dict(dataset_dict, f_or_m):Create training and testing folders for males and females
+
+        staeds_data_preparation(dataset_directory): Split dataset according to staeds dataset
+        
+        universal_data_preparation(dataset_directory, females_directory, males_directory): splitting data normally
+         
+    """
+    
     def __init__(self):
         pass
 
     @staticmethod
-    def get_fnames_from_dict(dataset_dict, f_or_m):
+    def get_fnames_from_dict(dataset_dict: dict, f_or_m: str) -> list:
+        
+        """ [Create training and testing folders for males and females]
+
+        Arguments:
+            [dataset_dict]: [dictionary with keys as keyword and values as list of files]
+            [f_or_m]: [creating sets for female or male i.e, "f" or "m"]
+
+        Returns:
+            [training_set, testing_test]: [returns training and testing set for females or males]
+        """
+        
         training_data, testing_data = [], []
 
         for i in range(1,6):
@@ -32,7 +60,16 @@ class SplitData:
         return training_data, testing_data
      
     @staticmethod   
-    def staeds_data_preparation(dataset_directory):
+    def staeds_data_preparation(dataset_directory: str):
+        
+        """ Splitting dataset for staeds dataset
+        
+        Arguments:
+            dataset_directory: directory where dataset is downloaded and extracted
+            
+        Returns:
+            create files in separate folders
+        """
         
         # compressed_dataset_file_name = dataset_path
         # dataset_directory = compressed_dataset_file_name.split(".")[0]
@@ -71,7 +108,21 @@ class SplitData:
         move_files(dataset_directory, os.path.join(dataset_directory, "TestingData/males"),    testing_set["males"])
             
     @staticmethod
-    def universal_data_preparation(dataset_directory, females_directory, males_directory):
+    def universal_data_preparation(dataset_directory: str, females_directory: str, males_directory: str):
+        
+        
+        """ Splitting dataset for any dataset
+        
+        Arguments:
+            dataset_directory: directory where dataset is downloaded and saved
+            
+            females_directory: directory where females voices is stored wthin dataset_directory
+            
+            males_directory: directory where males voices is stored wthin dataset_directory
+                        
+        Returns:
+            create files in separate folders
+        """ 
         
         training_set = {}
         testing_set = {}
