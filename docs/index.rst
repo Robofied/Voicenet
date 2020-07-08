@@ -26,26 +26,27 @@ Library Installation
 
    $ pip install voicenet
 
+Getting started
+====================
+
+
+Dependencies
+====================
+
 Requirements:
 
    pandas
    sklearn
 
-Contents:
+Table of Contents
+====================
 
 .. toctree::
+   :name: mastertoc
    :maxdepth: 2
-
-   getting-started
-   commands
 
    voicenet
 
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
