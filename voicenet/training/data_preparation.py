@@ -28,14 +28,14 @@ class SplitData:
     @staticmethod
     def get_fnames_from_dict(dataset_dict: dict, f_or_m: str) -> list:
         
-        """ [Create training and testing folders for males and females]
+        """ Create training and testing folders for males and females
 
         Arguments:
-            [dataset_dict]: [dictionary with keys as keyword and values as list of files]
-            [f_or_m]: [creating sets for female or male i.e, "f" or "m"]
+            dataset_dict: dictionary with keys as keyword and values as list of files
+            f_or_m: creating sets for female or male i.e, "f" or "m"
 
         Returns:
-            [training_set, testing_test]: [returns training and testing set for females or males]
+            training_set, testing_test: returns training and testing set for females or males
         """
         
         training_data, testing_data = [], []

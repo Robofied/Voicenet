@@ -45,10 +45,10 @@ class GMMModelTraining:
         """ Create features for all '.wav' files contains in files_list
         
         Arguments:
-            files_list: [takes a list of '.wav' training files]
+            files_list: takes a list of '.wav' training files
 
         Returns:
-            features: [creates a vector of all .wav training files and stack them over as an array]
+            features: creates a vector of all .wav training files and stack them over as an array
         """
         
         features = np.asarray(())

@@ -34,8 +34,8 @@ class Accuracy:
         """ combine the list of all files in females and males directory
         
         Arguments:
-            [females_dir]: [directory which contains females voice]
-            [males_dir]: [directory which contaisn males voice]
+            females_dir: directory which contains females voice
+            males_dir: directory which contaisn males voice
             
 
         Returns:
@@ -52,9 +52,9 @@ class Accuracy:
         """ calculate the test accuracy
         
         Arguments:
-            data_dir_females: [directory contains testing females voices]
+            data_dir_females: directory contains testing females voices
             
-            data_dir_males: [directory contains testing males voices]
+            data_dir_males: directory contains testing males voices
         
         """
         
