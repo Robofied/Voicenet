@@ -11,6 +11,8 @@ Comprehensive Python library for speech and voice.
 
 Current Version is [release](https://github.com/Robofied/Voicenet/releases)
 
+.. _GitHub: https://github.com/Robofied/Voicenet
+
 Key Features
 ============
 
