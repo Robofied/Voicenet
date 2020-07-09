@@ -6,6 +6,9 @@ import numpy as np
 
 class mfcc_features(object):
     
+    """ calculate mfcc features for voice file using python_speech_features
+    """
+    
     def __init__(self):
         pass
 
@@ -14,6 +17,15 @@ class mfcc_features(object):
     #     self.RAW_DATA_DIR = RAW_DATA_DIR
 
     def get_features(self, filename):
+        
+        """ calculate numeric features(mfcc features) for voice file
+        
+        Arguments:
+            filename: filename with path for which mfcc feature will be calculated
+
+        Returns:
+            np.array: array of shape 9*n(needs to be corrected) 
+        """
 
         # (rate,sig) = wav.read(os.path.join(self.RAW_DATA_DIR, filename))
         (rate,sig) = wav.read(os.path.join(filename))

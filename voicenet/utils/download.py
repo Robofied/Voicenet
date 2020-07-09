@@ -3,26 +3,34 @@ import wget
 import tarfile
 
 
-def extract_dataset(compressed_dataset_file_name, dataset_directory):
-        try:
-            tar = tarfile.open(compressed_dataset_file_name, "r:gz")
-            tar.extractall(dataset_directory)
-            tar.close()
-            print("Files extraction was successful!")
-
-        except:
-            print("No extraction was performed !")
-
-
-def download_staeds_extract_data(direc= "."):
+def extract_dataset(compressed_dataset_file_name: str, dataset_directory: str):
+    
+    """ extract dataset from compressed file
+    
+    Arguments:
+        compressed_dataset_file_name: compresses dataset filename
+        
+        dataset_directory: directory path where dataset to be extracted
     """
-    Download ST American English Speech data
+    
+    try:
+        tar = tarfile.open(compressed_dataset_file_name, "r:gz")
+        tar.extractall(dataset_directory)
+        tar.close()
+        print("Files extraction was successful!")
 
-    Parameters
+    except:
+        print("No extraction was performed !")
+
+
+def download_staeds_extract_data(direc= ".": str):
+    """
+    Download ST American English Speech data and extract the dataset using extract_dataset() function
+
+    Arguments
     ----------
-    dir: str
+    direc: str
         Directory where the dataset will be stored
-
     """
 
     direc = os.path.expanduser(direc)
