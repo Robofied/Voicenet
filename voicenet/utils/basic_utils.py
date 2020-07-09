@@ -71,12 +71,17 @@ def move_files(src, dst, group):
         print(src+ '/' + fname)
         os.rename(src + '/' + fname, dst + '/' + fname)
     
-def get_file_paths(females_training_path, males_training_path):
+def get_file_paths(females_training_path: str, males_training_path: str) -> list:
     
-    """ [summary]
+    """ getting list of path of female and male directory
+    
+    Arguments:
+        females_training_path: female_folder_path
+        
+        males_training_path: male_folder_path
 
     Returns:
-        [type]: [description]
+        list: list of females, males voice files with thier paths 
     """
     
     females = [ os.path.join(females_training_path, f) for f in os.listdir(females_training_path) ]
@@ -85,6 +90,14 @@ def get_file_paths(females_training_path, males_training_path):
     return females, males
 
 def save_gmm_model(gmm, directory_file_name):
+    
+    """ saving the trained model
+    
+    Arguments:
+        gmm: gmm model trained
+        
+        directory_file_name: directory where gmm model will be saved
+    """
     
     logging.info("Saving gmm model")
     
