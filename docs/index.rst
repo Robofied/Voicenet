@@ -51,10 +51,11 @@ Making prediction from pretrained models
 
    ## VoicePipeline is initialize with "gmm" model as it will use by default gmm models
    ## VoicePipeline(model="gmm") //by deafult, other options are not available for now. 
+   
    voicenet = VoicePipeline()      
    winner = voicenet.predict('wav-file-path.wav')
 
-print(winner)
+   print(winner)
 
 
 Source Code 

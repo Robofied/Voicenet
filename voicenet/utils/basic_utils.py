@@ -25,13 +25,29 @@ def setup_logging(
     else:
         logging.basicConfig(level=default_level)
 
-def label_encoder(list_cat_var):
+def label_encoder(list_cat_var: list) -> list:
+    
+    """ returning the encoded labels using label encoder
+    
+    Arguments:
+        list_car_var: list of categories
+
+    Returns:
+        list: encoded values for a input list
+    """
     le = LabelEncoder()
     le.fit(list_cat_var)
     list_cat_var = le.transform(list_cat_var)
     return list_cat_var
 
 def make_folder(folder_path):
+    
+    """ create an empty folder in specified folder path
+    
+    Arguments:
+        folder_path: path for folder to be created  
+    
+    """
     try:
         os.mkdir(folder_path)
         print(folder_path, "is created !")
@@ -39,6 +55,16 @@ def make_folder(folder_path):
         print("Exception raised: ", folder_path, "could not be created !")
         
 def move_files(src, dst, group):
+    
+    """ Move file from source to destination
+    
+    Arguments:
+        src: file to move from
+        
+        dst: file to be moved to destination
+        
+        group: list of file names to be move
+    """
     print("Moving!")
     print(group)
     for fname in group:
@@ -46,6 +72,12 @@ def move_files(src, dst, group):
         os.rename(src + '/' + fname, dst + '/' + fname)
     
 def get_file_paths(females_training_path, males_training_path):
+    
+    """ [summary]
+
+    Returns:
+        [type]: [description]
+    """
     
     females = [ os.path.join(females_training_path, f) for f in os.listdir(females_training_path) ]
     males = [ os.path.join(males_training_path, f) for f in os.listdir(males_training_path) ]
