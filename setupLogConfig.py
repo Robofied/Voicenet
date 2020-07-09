@@ -7,6 +7,7 @@
 # built-in module
 import os
 import logging
+from logging import config
 
 # third-party module
 import yaml
@@ -27,7 +28,7 @@ def setup_logging(
     if os.path.exists(path):
         with open(path, 'rt') as file:
             config = yaml.safe_load(file.read())
-        logging.config.dictConfig(config)
+        config.dictConfig(config)
     else:
         logging.basicConfig(level=default_level)
 

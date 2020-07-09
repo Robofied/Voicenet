@@ -30,8 +30,9 @@ class GMMModelTraining:
     
     """ Trains GMM Model 
     
-        Argumets
+        Attributes
         --------
+        
         staeds_flag: If user wants to train/retrain GMM model for staeds dataset.
         
     """
