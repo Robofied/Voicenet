@@ -23,7 +23,7 @@ def extract_dataset(compressed_dataset_file_name: str, dataset_directory: str):
         print("No extraction was performed !")
 
 
-def download_staeds_extract_data(direc= ".": str):
+def download_staeds_extract_data(direc= "."):
     """
     Download ST American English Speech data and extract the dataset using extract_dataset() function
 

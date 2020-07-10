@@ -20,6 +20,15 @@ MODEL_DIR = 'models/'
 # MALE_GMM_MODELFILE = 'males_gmm_model.gmm'
 class VoicePipeline():
     
+    """ Final Pipeline for making prediction i.e, detecting gender from voice file
+    
+    Attributes
+    ---------
+    model: which model you want to use for prediction. List of available models = ['gmm']
+    
+    trained_models(Optional): Flag for using trained models dictionary.
+    """
+    
     def __init__(self, model="gmm", trained_models= None):
         
         if model not in MODELS:
@@ -28,6 +37,17 @@ class VoicePipeline():
         self.trained_models = MODELS[str(model)]
     
     def identify_gender(self, female_model, male_model, vector):
+        
+        """ Calculate score from gmm model for the vector
+        
+        Arguments:
+            female_model: trained female gmm model
+            male_model: trained male gmm model
+            vector: mfcc feature vector for the voice file
+
+        Returns:
+            string: Male or Female based on score.
+        """
     
         is_female_score = np.array(female_model.score(vector))
         is_female_log_likelihood = is_female_score.sum()
@@ -47,6 +67,16 @@ class VoicePipeline():
         return winner   
     
     def predict(self, audiofile, trained_models=None):
+        
+        """ Converting voice file into mfcc feature and predict the gender
+        
+        Arguments:
+            audiofile: audiofile for which we need to detect the gender
+
+            trained_models(optional): Flag for using trained models dictionary.
+        Returns:
+            string: Female or Male based on score from identify_gender
+        """
         
         mfccfeatures = mfcc_features()
         
