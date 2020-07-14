@@ -3,7 +3,7 @@ import numpy as np
 import os
 import logging
 
-from voicenet.utils.features_extraction import mfcc_features
+from voicenet.utils import FeatureExtraction
 from voicenet.utils import basic_utils
 
 
@@ -78,7 +78,7 @@ class VoicePipeline():
             string: Female or Male based on score from identify_gender
         """
         
-        mfccfeatures = mfcc_features()
+        mfccfeatures = FeatureExtraction.mfcc_feature(audiofile)
         
         logger.info("Getting trained models from directory")
         trained_models = self.trained_models

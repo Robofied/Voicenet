@@ -4,7 +4,11 @@ from sklearn import preprocessing
 import os
 import numpy as np
 
-class mfcc_features(object):
+# __all__ = ["FeatureExtraction", "mfcc_feature"]
+
+# import _features_extraction
+
+class FeatureExtraction(object):
     
     """ calculate mfcc features for voice file using python_speech_features
     """
@@ -16,7 +20,8 @@ class mfcc_features(object):
     #     # self.filename = filename
     #     self.RAW_DATA_DIR = RAW_DATA_DIR
 
-    def get_features(self, filename):
+    @staticmethod
+    def mfcc_feature(filename):
         
         """ calculate numeric features(mfcc features) for voice file
         
