@@ -13,8 +13,9 @@ from sklearn.metrics import accuracy_score
 
 
 ## Our-defined packages
-from voicenet.utils import basic_utils, download
-from voicenet.utils.features_extraction import mfcc_features
+from voicenet.utils import basic_utils
+# from voicenet.datasets import stamerican
+from voicenet.utils import FeatureExtraction
 from .data_preparation import SplitData
 
 
@@ -58,8 +59,8 @@ class GMMModelTraining:
             
             logger.info("Creating features for {0}".format(file))
             
-            mfccfeatures = mfcc_features()
-            vector = mfccfeatures.get_features(file)
+            # mfccfeatures = mfcc_features()
+            vector = FeatureExtraction.mfcc_feature(file)
             
             ## If features array is empty then stacking is not possible.
             if features.size == 0:
@@ -93,8 +94,9 @@ class GMMModelTraining:
             
             logger.info("Working on STAEDS data")
             
-            download.download_staeds_extract_data(data_dir)
-            SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
+            # download.download_staeds_extract_data(data_dir)
+            # SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
+            # stamerican(data_dir)
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 

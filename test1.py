@@ -27,13 +27,18 @@
 
 # SplitData.universal_data_preparation('data/raw/test', 'data/raw/test/females', 'data/raw/test/males')
 
-from voicenet.utils import FeatureExtraction
+# from voicenet.utils import FeatureExtraction
 
-# from voicenet.utils import FeatureExtractn
+# # from voicenet.utils import FeatureExtractn
 
-hg = FeatureExtraction.mfcc_feature(filename='data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
-print(hg)
+# hg = FeatureExtraction.mfcc_feature(filename='data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
+# print(hg)
 # FeatureExtraction.mfcc_feature()
+from voicenet.datasets import stamerican
+
+x, y = stamerican('data/raw')
+
+print(x)
 
 
 
