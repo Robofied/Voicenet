@@ -1,6 +1,6 @@
 import os
 
-from voicenet.pipeline import VoicePipeline
+from voicenet.models import GenderDetection
 
 
 class Accuracy:
@@ -59,7 +59,7 @@ class Accuracy:
         """
         
         files = Accuracy.get_files_list(data_dir_females, data_dir_males)
-        voicenet = VoicePipeline()
+        voicenet = GenderDetection()
         
         for f in files:
             
