@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score
 
 ## Our-defined packages
 from voicenet.utils import basic_utils
-# from voicenet.datasets import stamerican
+from voicenet.datasets import stamerican
 from voicenet.utils import FeatureExtraction
 from .data_preparation import SplitData
 
@@ -96,7 +96,7 @@ class GMMModelTraining:
             
             # download.download_staeds_extract_data(data_dir)
             # SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
-            # stamerican(data_dir)
+            stamerican(data_dir)
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 

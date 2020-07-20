@@ -18,7 +18,7 @@ MODELS = {'gmm': ['females_gmm_model.gmm', 'males_gmm_model.gmm']}
 MODEL_DIR = 'models/'
 # FEMALE_GMM_MODELFILE = 'females_gmm_model.gmm'
 # MALE_GMM_MODELFILE = 'males_gmm_model.gmm'
-class VoicePipeline():
+class GenderDetection():
     
     """ Final Pipeline for making prediction i.e, detecting gender from voice file
     
@@ -100,7 +100,7 @@ class VoicePipeline():
  
 if __name__ == "__main__":
     
-    voicenet = VoicePipeline()  
+    voicenet = GenderDetection()  
     
     voicenet.predict('data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
 

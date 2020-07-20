@@ -36,9 +36,9 @@
 # FeatureExtraction.mfcc_feature()
 from voicenet.datasets import stamerican
 
-x, y = stamerican('data/raw')
+(x_train, y_train), (x_test, y_test) = stamerican('data/raw')
 
-print(x)
+print(y_test)
 
 
 
