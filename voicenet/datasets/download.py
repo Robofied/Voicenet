@@ -48,7 +48,7 @@ def stamerican(direc= "."):
     if os.path.exists(os.path.join(direc, file)):
         print(file, "already downloaded")
         dataset_dir = os.path.join(direc, 'ST-AEDS')
-        self.extract_dataset(file, dataset_dir)
+        extract_dataset(file, dataset_dir)
         SplitData.staeds_data_preparation(dataset_dir)
         x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
         x_train.extend(os.listdir(os.path.join(dataset_dir, 'TrainingData/males')))
@@ -62,7 +62,7 @@ def stamerican(direc= "."):
     else:
         wget.download(url=data_url, out=direc)
         dataset_dir = os.path.join(direc, 'ST-AEDS')
-        self.extract_dataset(file, dataset_dir)
+        extract_dataset(file, dataset_dir)
         
         SplitData.staeds_data_preparation(dataset_dir)
         x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]

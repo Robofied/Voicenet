@@ -34,13 +34,13 @@ from voicenet.training import GMMModelTraining
 # hg = FeatureExtraction.mfcc_feature(filename='data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
 # print(hg)
 # FeatureExtraction.mfcc_feature()
-# from voicenet.datasets import stamerican
+from voicenet.datasets import stamerican
 
-# stamerican('data/raw')
+stamerican('data/raw')
 
-# (x_train, y_train), (x_test, y_test) = stamerican('data/raw')
+(x_train, y_train), (x_test, y_test) = stamerican('data/raw')
 
-# print(y_test)
+print(y_test)
 
 
 
