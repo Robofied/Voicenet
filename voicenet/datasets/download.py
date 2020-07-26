@@ -1,9 +1,9 @@
 import os
 import wget
 import tarfile
-from voicenet.training import SplitData
-
-
+from voicenet.training.data_preparation import SplitData
+    
+    
 def extract_dataset(compressed_dataset_file_name: str, dataset_directory: str):
     
     """ extract dataset from compressed file
@@ -23,7 +23,7 @@ def extract_dataset(compressed_dataset_file_name: str, dataset_directory: str):
     except:
         print("No extraction was performed !")
 
-
+# @staticmethod
 def stamerican(direc= "."):
     """
     Download ST American English Speech data and extract the dataset using extract_dataset() function
@@ -48,7 +48,7 @@ def stamerican(direc= "."):
     if os.path.exists(os.path.join(direc, file)):
         print(file, "already downloaded")
         dataset_dir = os.path.join(direc, 'ST-AEDS')
-        extract_dataset(file, dataset_dir)
+        self.extract_dataset(file, dataset_dir)
         SplitData.staeds_data_preparation(dataset_dir)
         x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
         x_train.extend(os.listdir(os.path.join(dataset_dir, 'TrainingData/males')))
@@ -62,7 +62,7 @@ def stamerican(direc= "."):
     else:
         wget.download(url=data_url, out=direc)
         dataset_dir = os.path.join(direc, 'ST-AEDS')
-        extract_dataset(file, dataset_dir)
+        self.extract_dataset(file, dataset_dir)
         
         SplitData.staeds_data_preparation(dataset_dir)
         x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
@@ -75,7 +75,7 @@ def stamerican(direc= "."):
         
         return (x_train, y_train), (x_test, y_test)
         
-    
+
 
 
 

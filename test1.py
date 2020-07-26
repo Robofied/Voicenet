@@ -2,10 +2,10 @@
 
 # voice = vp.cdqa_pipeline.VoicePipeline()
 
-# from voicenet.pipeline import VoicePipeline
-# from voicenet.training import GMMModelTraining
+from voicenet.models import GenderDetection
+from voicenet.training import GMMModelTraining
 
-# voicenet = VoicePipeline()  
+# voicenet = GenderDetection()  
     
 # winner = voicenet.predict('data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
 
@@ -29,16 +29,18 @@
 
 # from voicenet.utils import FeatureExtraction
 
-# # from voicenet.utils import FeatureExtractn
+# from voicenet.utils import FeatureExtractn
 
 # hg = FeatureExtraction.mfcc_feature(filename='data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
 # print(hg)
 # FeatureExtraction.mfcc_feature()
-from voicenet.datasets import stamerican
+# from voicenet.datasets import stamerican
 
-(x_train, y_train), (x_test, y_test) = stamerican('data/raw')
+# stamerican('data/raw')
 
-print(y_test)
+# (x_train, y_train), (x_test, y_test) = stamerican('data/raw')
+
+# print(y_test)
 
 
 

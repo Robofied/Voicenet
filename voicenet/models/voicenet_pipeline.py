@@ -78,7 +78,7 @@ class GenderDetection():
             string: Female or Male based on score from identify_gender
         """
         
-        mfccfeatures = FeatureExtraction.mfcc_feature(audiofile)
+        # mfccfeatures = FeatureExtraction.mfcc_feature(audiofile)
         
         logger.info("Getting trained models from directory")
         trained_models = self.trained_models
@@ -90,7 +90,7 @@ class GenderDetection():
         male_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[1]), 'rb'))
 
         logger.info("Creating features for audofile")
-        vector = mfccfeatures.get_features(audiofile)
+        vector = FeatureExtraction.mfcc_feature(audiofile)
 
         winner = self.identify_gender(female_model,male_model,vector)
         logging.info("Winner is {}".format(winner))

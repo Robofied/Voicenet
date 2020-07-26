@@ -96,7 +96,7 @@ class GMMModelTraining:
             
             # download.download_staeds_extract_data(data_dir)
             # SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
-            stamerican(data_dir)
+            Download.stamerican(data_dir)
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 
