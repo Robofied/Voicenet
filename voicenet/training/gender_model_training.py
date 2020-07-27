@@ -27,7 +27,10 @@ logger = logging.getLogger(__name__)
 ## GLOBAL VARIABLES
 STAEDS = 'ST-AEDS'
 
+
 class GMMModelTraining:
+    
+    logger.info("hello")
     
     """ Trains GMM Model 
     
