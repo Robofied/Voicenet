@@ -14,15 +14,15 @@ from sklearn.metrics import accuracy_score
 
 ## Our-defined packages
 from voicenet.utils import basic_utils
-from voicenet.datasets import stamerican
+from voicenet.datasets import download
 from voicenet.utils import FeatureExtraction
 from .data_preparation import SplitData
 
 
 """Setup"""
 # logger setup
-basic_utils.setup_logging()
-logger = logging.getLogger(__name__)
+# basic_utils.setup_logging()
+# logger = logging.getLogger(__name__)
 
 ## GLOBAL VARIABLES
 STAEDS = 'ST-AEDS'
@@ -30,7 +30,7 @@ STAEDS = 'ST-AEDS'
 
 class GMMModelTraining:
     
-    logger.info("hello")
+    # logger.info("hello")
     
     """ Trains GMM Model 
     
@@ -60,7 +60,7 @@ class GMMModelTraining:
         
         for file in files_list:
             
-            logger.info("Creating features for {0}".format(file))
+            logging.info("Creating features for {0}".format(file))
             
             # mfccfeatures = mfcc_features()
             vector = FeatureExtraction.mfcc_feature(file)
@@ -95,11 +95,11 @@ class GMMModelTraining:
         
         if self.staeds_flag:
             
-            logger.info("Working on STAEDS data")
+            logging.info("Working on STAEDS data")
             
             # download.download_staeds_extract_data(data_dir)
             # SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
-            stamerican(data_dir)
+            download.stamerican(data_dir)
 
             females, males = basic_utils.get_file_paths(os.path.join(data_dir, STAEDS,'TrainingData/females'), os.path.join(data_dir, STAEDS,'TrainingData/males') )
 
@@ -113,14 +113,14 @@ class GMMModelTraining:
             females, males = basic_utils.get_file_paths(os.path.join(data_dir,'TrainingData/females'), os.path.join(data_dir,'TrainingData/males') )
 
             
-        # logger.info(females, males)
+        # logging.info(females, males)
 
         female_mfcc_features = self.collect_features(females)
         male_mfcc_features = self.collect_features(males)
 
         # print(female_mfcc_features)
         
-        logger.info("Fitting GMM Model for females and males")
+        logging.info("Fitting GMM Model for females and males")
 
         females_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)
         males_gmm = GaussianMixture(n_components = 16, max_iter = 200, covariance_type = 'diag', n_init = 3)

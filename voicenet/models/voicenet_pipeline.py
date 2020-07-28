@@ -7,10 +7,10 @@ from voicenet.utils import FeatureExtraction
 from voicenet.utils import basic_utils
 
 
-"""Setup"""
-# logger setup
-basic_utils.setup_logging()
-logger = logging.getLogger(__name__)
+# """Setup"""
+# # logger setup
+# basic_utils.setup_logging()
+# logger = logging.getLogger(__name__)
 
 
 ## GLOBAL VARIABLES

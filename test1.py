@@ -2,8 +2,8 @@
 
 # voice = vp.cdqa_pipeline.VoicePipeline()
 
-from voicenet.models import GenderDetection
-from voicenet.training import GMMModelTraining
+# from voicenet.models import GenderDetection
+# from voicenet.training import GMMModelTraining
 
 # voicenet = GenderDetection()  
     
