@@ -51,13 +51,13 @@ def stamerican(direc= "."):
         dataset_dir = os.path.join(direc, 'ST-AEDS')
         extract_dataset(file, dataset_dir)
         SplitData.staeds_data_preparation(dataset_dir)
-        x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
-        x_train.extend(os.listdir(os.path.join(dataset_dir, 'TrainingData/males')))
-        x_train = [os.path.join(dataset_dir,'TrainingData/females/')+x for x in x_train]
+        x_train, y_train = [os.path.join(dataset_dir,'TrainingData/females/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))], [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
+        x_train.extend([os.path.join(dataset_dir,'TrainingData/males/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TrainingData/males'))])
+        # x_train = [os.path.join(dataset_dir,'TrainingData/females/')+x for x in x_train]
         y_train.extend([1 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/males'))))])
         
-        x_test, y_test = os.listdir(os.path.join(dataset_dir, 'TestingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/females'))))]
-        x_test.extend(os.listdir(os.path.join(dataset_dir, 'TestingData/males')))
+        x_test, y_test = [os.path.join(dataset_dir,'TestingData/females/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TestingData/females'))], [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/females'))))]
+        x_test.extend([os.path.join(dataset_dir,'TestingData/males/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TestingData/males'))])
         y_test.extend([1 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/males'))))])
         
         return (x_train, y_train), (x_test, y_test)
@@ -67,15 +67,15 @@ def stamerican(direc= "."):
         extract_dataset(file, dataset_dir)
         
         SplitData.staeds_data_preparation(dataset_dir)
-        x_train, y_train = os.listdir(os.path.join(dataset_dir, 'TrainingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
-        x_train.extend(os.listdir(os.path.join(dataset_dir, 'TrainingData/males')))
-        x_train = [os.path.join(dataset_dir,'TrainingData/females/')+x for x in x_train]
+        x_train, y_train = [os.path.join(dataset_dir,'TrainingData/females/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))], [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/females'))))]
+        x_train.extend([os.path.join(dataset_dir,'TrainingData/males/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TrainingData/males'))])
+        # x_train = [os.path.join(dataset_dir,'TrainingData/females/')+x for x in x_train]
         y_train.extend([1 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TrainingData/males'))))])
         
-        x_test, y_test = os.listdir(os.path.join(dataset_dir, 'TestingData/females')), [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/females'))))]
-        x_test.extend(os.listdir(os.path.join(dataset_dir, 'TestingData/males')))
+        x_test, y_test = [os.path.join(dataset_dir,'TestingData/females/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TestingData/females'))], [0 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/females'))))]
+        x_test.extend([os.path.join(dataset_dir,'TestingData/males/',voice_file) for voice_file in os.listdir(os.path.join(dataset_dir, 'TestingData/males'))])
         y_test.extend([1 for i in range(len(os.listdir(os.path.join(dataset_dir, 'TestingData/males'))))])
-        
+ 
         return (x_train, y_train), (x_test, y_test)
         
 
