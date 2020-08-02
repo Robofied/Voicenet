@@ -3,7 +3,7 @@
 # voice = vp.cdqa_pipeline.VoicePipeline()
 
 # from voicenet.models import GenderDetection
-# from voicenet.training import GMMModelTraining
+from voicenet.training import GMMModelTraining
 
 # voicenet = GenderDetection()  
     
@@ -11,9 +11,9 @@
 
 # print(winner)
 
-# gmm_model = GMMModelTraining(staeds_flag=False)
+gmm_model = GMMModelTraining(staeds_flag=False)
 
-# gmm_model.train_model(data_dir='data/raw/test', data_dir_females='data/raw/test/females', data_dir_males='data/raw/test/males', model_dir='models/')
+gmm_model.train_model(data_dir='data/raw/test', data_dir_females='data/raw/test/females', data_dir_males='data/raw/test/males', model_dir='models/')
 
 # from voicenet.training import Accuracy
 
