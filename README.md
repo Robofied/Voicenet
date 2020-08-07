@@ -1,6 +1,6 @@
 ## Voicenet
 Comprehensive Python library for speech :speech_balloon: and voice :sound:.<br><br>
-![testimage](https://github.com/Robofied/Voicenet/blob/master/Voicenet.png)
+![testimage](https://github.com/Robofied/Voicenet/blob/master/resources/Voicenet.png)
 
 ## Getting Started
 Voicenet is a comprehensive library for performing speech/voice based functions. It is capable of doing:
@@ -86,7 +86,7 @@ If you are planning to use [training modules](#Training-Models) of Voicenet then
 
 You have to download ST-AEDS Dataset from [here]() and then extract it and split it into training and testing sets for females and males both separately as shown below(directory structure) 
 
-![directory-structure](https://github.com/Robofied/Voicenet/blob/master/ST-AEDS-directory.png)
+![directory-structure](https://github.com/Robofied/Voicenet/blob/master/resources/ST-AEDS-directory.png)
 
 <b>b. With converters</b>
 
