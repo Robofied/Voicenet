@@ -48,11 +48,11 @@ CPU(Octa-Core) 16GB RAM - Ubuntu 19.04
 You can download the models and data manually from the GitHub [releases](https://github.com/Robofied/Voicenet/releases) or use our download functions:
 
 ```python
-from voicenet.utils.download import download_staeds_extract_data
+from voicenet.datasets import stamerican
 
-directory = 'path-to-directory'
+(x_train, y_train), (x_test, y_test) = stamerican()
 
-download_staeds_extract_data(direc=directory)
+stamerican will load data locally(relative to ~/voicenet/data/datasets)
 
 ```
 If you are looking to work on ST-AEDS dataset with model training(we arlready have trained model but incase you want to train model again.) then you can skip this step as [training module](#Training-Models) already perform this step.
@@ -63,11 +63,11 @@ If you are looking to work on ST-AEDS dataset with model training(we arlready ha
 Trained models are saved in 'models/' directory
 
 ```python
-from voicenet.pipeline import VoicePipeline
+from voicenet.models import GenderDetection
 
 ## VoicePipeline is initialize with "gmm" model as it will use by default gmm models
 ## VoicePipeline(model="gmm") //by deafult, other options are not available for now. 
-voicenet = VoicePipeline()      
+voicenet = GenderDetection(model="gmm")      
 winner = voicenet.predict('wav-file-path.wav')
 
 print(winner)
