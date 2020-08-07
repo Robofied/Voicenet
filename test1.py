@@ -40,6 +40,8 @@ from voicenet.datasets import stamerican
 
 (x_train, y_train), (x_test, y_test) = stamerican()
 
+print(x_train)
+
 print(y_test)
 
 # from voicenet.feature_extraction import MFCC
