@@ -8,9 +8,9 @@ from voicenet.utils import basic_utils
 
 
 # """Setup"""
-# # logger setup
+# # logging setup
 # basic_utils.setup_logging()
-# logger = logging.getLogger(__name__)
+# logging = logging.getlogging(__name__)
 
 
 ## GLOBAL VARIABLES
@@ -55,8 +55,8 @@ class GenderDetection():
         is_male_score = np.array(male_model.score(vector))
         is_male_log_likelihood = is_male_score.sum()
         
-        logger.info("Female Likelihood {0}".format(is_female_log_likelihood))
-        logger.info("Male Likelihood {0}".format(is_male_log_likelihood))
+        logging.info("Female Likelihood {0}".format(is_female_log_likelihood))
+        logging.info("Male Likelihood {0}".format(is_male_log_likelihood))
             
         
         if is_male_log_likelihood > is_female_log_likelihood:
@@ -80,7 +80,7 @@ class GenderDetection():
         
         # mfccfeatures = FeatureExtraction.mfcc_feature(audiofile)
         
-        logger.info("Getting trained models from directory")
+        logging.info("Getting trained models from directory")
         trained_models = self.trained_models
         print(trained_models)
 
@@ -89,7 +89,7 @@ class GenderDetection():
         female_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[0]),'rb'))
         male_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[1]), 'rb'))
 
-        logger.info("Creating features for audofile")
+        logging.info("Creating features for audofile")
         vector = FeatureExtraction.mfcc_feature(audiofile)
 
         winner = self.identify_gender(female_model,male_model,vector)

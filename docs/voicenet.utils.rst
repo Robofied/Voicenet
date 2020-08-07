@@ -12,22 +12,6 @@ voicenet.utils.basic\_utils module
    :undoc-members:
    :show-inheritance:
 
-voicenet.utils.download module
-------------------------------
-
-.. automodule:: voicenet.utils.download
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-voicenet.utils.features\_extraction module
-------------------------------------------
-
-.. automodule:: voicenet.utils.features_extraction
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 Module contents
 ---------------

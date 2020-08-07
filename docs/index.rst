@@ -36,23 +36,22 @@ Download Pretrained model and dataset(if required)
 
 .. code-block:: python
 
-   from voicenet.utils.download import download_staeds_extract_data
+   from voicenet.datasets import stamerican
 
-   directory = 'path-to-directory'
+   (x_train, y_train), (x_test, y_test) = stamerican()
 
-   download_staeds_extract_data(direc=directory)
+   stamerican will load data locally(relative to ~/voicenet/data/datasets)
 
 Making prediction from pretrained models
 ----------------------------------------
 
 .. code-block:: python
 
-   from voicenet.pipeline import VoicePipeline
+   from voicenet.models import GenderDetection
 
    ## VoicePipeline is initialize with "gmm" model as it will use by default gmm models
    ## VoicePipeline(model="gmm") //by deafult, other options are not available for now. 
-   
-   voicenet = VoicePipeline()      
+   voicenet = GenderDetection(model="gmm")      
    winner = voicenet.predict('wav-file-path.wav')
 
    print(winner)

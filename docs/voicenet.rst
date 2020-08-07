@@ -7,7 +7,9 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   voicenet.pipeline
+   voicenet.datasets
+   voicenet.feature_extraction
+   voicenet.models
    voicenet.training
    voicenet.utils
 

@@ -1,13 +1,13 @@
-src.visualization package
+voicenet.datasets package
 =========================
 
 Submodules
 ----------
 
-src.visualization.visualize module
-----------------------------------
+voicenet.datasets.download module
+---------------------------------
 
-.. automodule:: src.visualization.visualize
+.. automodule:: voicenet.datasets.download
    :members:
    :undoc-members:
    :show-inheritance:
@@ -16,7 +16,7 @@ src.visualization.visualize module
 Module contents
 ---------------
 
-.. automodule:: src.visualization
+.. automodule:: voicenet.datasets
    :members:
    :undoc-members:
    :show-inheritance:
