@@ -42,9 +42,9 @@
 
 # print(y_test)
 
-from voicenet.feature_extraction import mfcc
+from voicenet.feature_extraction import MFCC
 
-combined_features = mfcc.MFCC('data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
+combined_features = MFCC('data/raw/ST-AEDS/TestingData/females/f0001_us_f0001_00005.wav')
 
 print(combined_features)
 
