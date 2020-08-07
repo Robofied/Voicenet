@@ -24,7 +24,7 @@ def extract_dataset(compressed_dataset_file_name: str, dataset_directory: str):
         print("No extraction was performed !")
 
 # @staticmethod
-def stamerican(direc= "."):
+def stamerican(direc= "../../data/raw/"):
     """
     Download ST American English Speech data and extract the dataset using extract_dataset() function
 
@@ -34,8 +34,14 @@ def stamerican(direc= "."):
         Directory where the dataset will be stored
     """
 
-    direct = os.path.expanduser(direc)
-    print(direct)
+    # direct = os.path.expanduser(direc)
+    # print(direct)
+    # print(os.path.abspath(__file__))
+    cwd = os.path.dirname(__file__)
+    direc = os.path.normpath(os.path.join(cwd, direc))
+    # direc = os.path.normpath(cwd, direc)
+    # cwd = os.path.abspath(__file__).rsplit('/',1)[0]
+    # cwd =os.path.join(cwd, )
 
     if not os.path.exists(direc):
         os.makedirs(direc)
