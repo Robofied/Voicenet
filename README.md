@@ -91,13 +91,12 @@ You have to download ST-AEDS Dataset from [here]() and then extract it and split
 <b>b. With converters</b>
 
 ```python
-from voicenet.utils.download import download_staeds_extract_data
-from voicenet.data_preparation import SplitData
+from voicenet.datasets import stamerican
 
-directory = 'path-to-directory'
+(x_train, y_train), (x_test, y_test) = stamerican()
 
-download_staeds_extract_data(direc=directory)
-SplitData.staeds_data_preparation(os.path.join(data_dir, STAEDS))
+stamerican will load data locally(relative to ~/voicenet/data/datasets)
+
 
 ```
 
