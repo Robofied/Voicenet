@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score
 ## Our-defined packages
 from voicenet.utils import basic_utils
 from voicenet.datasets import download
-from voicenet.utils import FeatureExtraction
+from voicenet.feature_extraction import MFCC
 from .data_preparation import SplitData
 
 
@@ -63,7 +63,7 @@ class GMMModelTraining:
             logging.info("Creating features for {0}".format(file))
             
             # mfccfeatures = mfcc_features()
-            vector = FeatureExtraction.mfcc_feature(file)
+            vector = MFCC(file)
             
             ## If features array is empty then stacking is not possible.
             if features.size == 0:

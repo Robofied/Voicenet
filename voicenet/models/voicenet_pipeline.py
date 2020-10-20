@@ -3,7 +3,7 @@ import numpy as np
 import os
 import logging
 
-from voicenet.utils import FeatureExtraction
+from voicenet.feature_extraction import MFCC
 from voicenet.utils import basic_utils
 
 
@@ -90,7 +90,7 @@ class GenderDetection():
         male_model = pickle.load(open(os.path.join(MODEL_DIR, trained_models[1]), 'rb'))
 
         logging.info("Creating features for audofile")
-        vector = FeatureExtraction.mfcc_feature(audiofile)
+        vector = MFCC(audiofile)
 
         winner = self.identify_gender(female_model,male_model,vector)
         logging.info("Winner is {}".format(winner))
